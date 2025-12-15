@@ -42,3 +42,17 @@ Brian - PHP
 - Battle continues until all Pokemon on one team faint
 - Type effectiveness and STAB bonuses affect damage
 - First player to defeat all opponent's Pokemon wins
+
+## 4 Pillars  
+
+- Encapsulation 
+To implement it, properties in classes like Pokémon, Attack, and PokémonBattle were declared private or protected, and only public methods like getters, damage, heal, and status-related functions could access or modify them.  Important information like health, speed, attacks, and battle state cannot be accessed directly as a result. 
+
+- Abstraction 
+The BattleAction interface and the abstract BattleEntity class, which define common methods without full implementation, are examples of abstraction in action. These structures conceal unnecessary internal details while forcing child classes to keep to a mandatory format. 
+
+- Inheritance 
+When the Pokémon class extends the BattleEntity class, inheritance is used, enabling Pokémon to reuse shared behaviors and attributes like name, health, damage handling, and faint checking without having to rewrite them. 
+
+- Polymorphism 
+The battle system makes use of polymorphism so that various action classes, such as attack, switch, and item, all use the same BattleAction interface but carry out distinct actions when they are executed. This enables the application to manage several behaviors with a single action flow. 
